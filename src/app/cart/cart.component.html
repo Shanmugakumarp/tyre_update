@@ -1,0 +1,98 @@
+<div class="cart" style="height: 100%; width: 100%;">
+  <div class="cart-container">
+    <div class="cart-header">
+      <div style="padding:20px">
+        <button accent mat-raised-button style="float:left; margin-right: 15px;"> Revise Search </button>
+        <span style="display:block">Same front / rear</span>
+        <span>225/65R17 All Season</span>
+        <span style="float:right">FOUND 39 TIRES</span>
+      </div>
+    </div>
+    <div class="filter">
+      <h5>FILTER RESULTS</h5>
+      <div style="display: inline-flex;width: 100%">
+        <div class="filter-list">
+          <label>Price Range</label><br />
+          <mat-slider class="filter-data" thumbLabel tickInterval="1" min="1" max="5000"></mat-slider>
+        </div>
+        <div class="filter-list">
+          <label>Brand</label><br />
+          <mat-select class="filter-data" placeholder="Select">
+            <mat-option *ngFor="let count of quantity" [value]="count.value">
+              {{count.displayName}}
+            </mat-option>
+          </mat-select>
+        </div>
+        <div class="filter-list">
+          <label>Speed Rating</label>
+          <mat-select class="filter-data" placeholder="Select">
+            <mat-option> </mat-option>
+          </mat-select>
+        </div>
+      </div>
+    </div>
+
+    <div class="tire-list">
+      <div class="tire-title">
+        <div style="font-weight: 700; font-size: 22px;">TIRE RECOMMENDATIONS</div>
+        <div style="float:right">
+          Sort By:
+          <mat-select style="width:150px; padding: 15px;" placeholder="Select">
+            <mat-option> </mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <mat-grid-list *ngFor="let data of tyreData; index as i" cols="6" rowHeight="230px" style="text-align: left; border: 1px solid;">
+        <mat-grid-tile colspan="1" rowspan="1">Tyre Image</mat-grid-tile>
+        <mat-grid-tile colspan="5" rowspan="1">
+          <div class="list-info-container" style=" width:100%">
+            <div class="list-header" style="margin-bottom: 10px">
+              <span style="display: block; font-weight: 700; font-size: 22px"> {{data.name}} </span>
+              <span style="display: block; font-size: 12px"> {{data.category}} </span>
+            </div>
+            <div class="list-content">
+              <div class="splitdiv">
+                <label>AVAILABILITY :</label><br />
+                <span>
+                  {{data.availability.stock ? "IN-STOCK" : "OUT-OF-STOCK"}}</span><br />
+                <span style="font-size: 11px"> AVAILABLE IN MIN {{data.availability.avail_in}} DAYS.</span>
+              </div>
+              <div class="splitdiv">
+                <label>PRICE :</label>
+                <span style="display: block; font-weight: 700; font-size: 25px">{{data.price | currency}}</span>
+                <span style="display: block; font-size: 12px"> per tire</span>
+                <span style="display: block; font-size: 12px">{{ selectedquantity.value > 0 ? "Set of " +
+                  selectedquantity.value +": " + ((selectedquantity.value * data.price) | currency) : ""}} </span>
+              </div>
+              <div class="splitdiv">
+                <label>QUANTITY :</label><br />
+                <mat-select class="quantity-selector" (selectionChange)="onQuantitySelect($event.value, data, i)"
+                  #selectedquantity style="width: 90px; padding: 15px;" placeholder="Select">
+                  <mat-option *ngFor="let count of quantity" [value]="count.value">
+                    {{count.displayName}}
+                  </mat-option>
+                </mat-select>
+              </div>
+              <div style="width: 200px" class="splitdiv">
+                <label>SPECS: </label>
+                <ul style="list-style-type:none; text-align: left; padding: 0px; font-size: 13px;">
+                  <li>Size: <span style="float: right;">{{data.specs.size}}</span></li>
+                  <li>Load Index:<span style="float: right;">{{data.specs.load_index}}</span></li>
+                  <li>Part: <span style="float: right;">{{data.specs.part}}</span></li>
+                  <li>Speed Rating: <span style="float: right;">{{data.specs.speed}}</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="list-footer">
+              <button mat-raised-button style="margin: 0px 15px"> SELECT AND PROCEED TO APPOINTMENT SCHEDULING </button>
+            </div>
+          </div>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+    <div class="footer" style="text-align:right">
+      <h3 style="font-size: 35px; font-weight: 500; padding: 15px; background-color: #424242; color: white">Total:
+        {{total | currency}}</h3>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Tyre Name",
+        "category": "Tyre Category",
+        "availability": {
+            "stock" : true,
+            "avail_in": 3
+        },
+        "price": 130,
+        "specs": {
+            "size": "225/65R17",
+            "load_index": "102",
+            "part": "0060",
+            "speed": 118
+        }
+    },
+    {
+        "name": "Tyre Name1",
+        "category": "Tyre Category1",
+        "availability": {
+            "stock" : false,
+            "avail_in": 7
+        },
+        "price": 185,
+        "specs": {
+            "size": "220/65R17",
+            "load_index": "102",
+            "part": "0060",
+            "speed": 118
+        }
+    },
+    {
+        "name": "Tyre Name2",
+        "category": "Tyre Category2",
+        "availability": {
+            "stock" : true,
+            "avail_in": 1
+        },
+        "price": 210,
+        "specs": {
+            "size": "330/75R17",
+            "load_index": "105",
+            "part": "0560",
+            "speed": 130
+        }
+    },
+    {
+        "name": "Tyre Name3",
+        "category": "Tyre Category3",
+        "availability": {
+            "stock" : true,
+            "avail_in": 5
+        },
+        "price": 150,
+        "specs": {
+            "size": "225/65R17",
+            "load_index": "102",
+            "part": "0060",
+            "speed": 120
+        }
+    }
+]

@@ -1,0 +1,89 @@
+.splitdiv{
+    padding: 10px;
+    width: 150px;
+    border: 1px solid;
+    height: 85px;
+}
+
+:host /deep/ .mat-select-arrow{
+    color: #424242 !important;
+}
+
+:host /deep/ .mat-select-placeholder{
+    color: #686868 !important;
+}
+
+:host /deep/ .mat-select-value {
+    color: #686868 !important;
+  }
+
+:host /deep/ .mat-slider-track-background {
+    background-color: #b0bec5 !important;
+  }
+
+:host /deep/ .mat-accent .mat-slider-track-fill {
+    background-color: #686868 !important;
+  }
+
+:host /deep/ .mat-slider-thumb {
+    background-color: #424242 !important;
+  }
+
+:host /deep/ .mat-grid-tile .mat-figure {
+    overflow: auto;
+}
+
+.cart-container {
+    margin: auto; 
+    background-color: rgba(0,0,0,.1); 
+    border: 1px solid;
+}
+
+.cart-header {
+    text-align: left; 
+    margin-top: 50px; 
+    background-color: darkgray; 
+    width: 100%; 
+    border-bottom: 1px solid;
+}
+
+.filter {
+    display: block; 
+    text-align: left; 
+    width: calc(100% - 30px); 
+    padding: 0px 0px 0px 15px;
+}
+
+.filter-list {
+    border:1px solid;
+    width:33%;
+    padding: 10px;
+}
+
+.filter-data {
+    width: 85%; 
+    padding: 15px;
+}
+
+.tire-title { 
+    display: inline-block; 
+    text-align: left; 
+    width: 100%;
+}
+
+.tire-list { 
+    padding: 15px 15px 0px 15px;
+}
+
+.mat-slider-horizontal {
+    min-width: 90px;
+}
+
+.list-footer {
+    padding-top: 8px; 
+}
+
+.list-content { 
+    display: inline-flex; 
+    margin: 0px 15px; 
+}
